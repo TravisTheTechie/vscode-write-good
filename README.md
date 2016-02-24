@@ -1,13 +1,19 @@
-# README
-## This is the README for your extension "write-good-linter" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# Write Good Linter for Visual Studio Code
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+Provides a [write-good](https://github.com/btford/write-good) linter extension for
+[Visual Studio Code](https://code.visualstudio.com/). 
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## License and acknowledgements
 
-** Enjoy!**
+This is licensed under the MIT open source license. 
+Do what you want with this software, just include notice that it orginated with me.
+
+The heavy lifting of this extension is done via [Brian Ford](https://twitter.com/briantford)'s
+[write-good](https://www.npmjs.com/package/write-good) npm module. 
+
+## Working on this project
+
+Open up the project in Visual Studio Code and hit F5 to open up a *developement host*
+version of Visual Studio Code with the extension installed. 
+
+Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/extensions/overview) documentation for more information.
