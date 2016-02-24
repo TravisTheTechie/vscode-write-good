@@ -1,8 +1,8 @@
 {
   "name": "write-good-linter",
-  "displayName": "Write-Good Linter",
-  "description": "Applies the Write-Good Linter to you Markdown, so you can write more good.",
-  "version": "0.0.1",
+  "displayName": "Write Good Linter",
+  "description": "Applies the Write Good Linter to you Markdown, so you can write more good.",
+  "version": "0.0.2",
   "publisher": "travisthetechie",
   "engines": {
     "vscode": "^0.10.6"
