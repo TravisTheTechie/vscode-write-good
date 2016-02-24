@@ -25,5 +25,9 @@
   },
   "dependencies": {
     "write-good": "^0.9.1"
+  },
+  "license": "MIT",
+  "repository": {
+      "url": "https://github.com/TravisTheTechie/vscode-write-good"
   }
 }
