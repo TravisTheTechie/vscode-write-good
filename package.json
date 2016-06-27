@@ -1,7 +1,7 @@
 {
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
-  "description": "Applies the Write Good Linter to you Markdown, so you can write more good.",
+  "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
   "version": "0.0.2",
   "publisher": "travisthetechie",
   "engines": {
