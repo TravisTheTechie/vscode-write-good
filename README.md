@@ -14,6 +14,15 @@ The heavy lifting of this extension is done via [Brian Ford](https://twitter.com
 
 ## Working on this project
 
+Install Node.js & `npm install` in the project.
+
 Open up the project in Visual Studio Code and hit F5 to open up a *developement host* version of Visual Studio Code with the extension installed. Open up a Markdown file and write some bad prose to see linter in action.
 
 Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/extensions/overview) documentation for more information.
+
+## Publishing
+
+1. `npm install -g vsce`
+1. Visit https://travisthetechie.visualstudio.com/_details/security/tokens for a token (all accounts, all scopes)
+1. `vsce login travisthetechie`
+1. `vsce publish <version>`
