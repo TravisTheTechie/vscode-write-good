@@ -14,6 +14,29 @@
     "onLanguage:markdown"
   ],
   "main": "./out/src/extension",
+  "contributes": {
+    "configuration":{
+      "type": "object",
+      "title": "write-good",
+      "properties": {
+        "write-good.languages": {
+          "default": [
+            "markdown",
+            "plaintext"
+          ],
+          "type": [
+            "string",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Languages to lint with the write-good linter",
+          "scope": "resource"
+        }
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",

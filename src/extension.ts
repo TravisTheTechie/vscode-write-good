@@ -8,13 +8,26 @@ export function activate(context: ExtensionContext) {
 
     console.log("Write-Good Linter active...");
 
+    function isWriteGoodLanguage(languageId) {
+        let wgLanguages: string = workspace.getConfiguration('write-good').get('include');
+        return (wgLanguages.indexOf(languageId) > -1);
+    }
+    
     context.subscriptions.push(workspace.onDidChangeTextDocument(event => {
-        doLint(event.document);
+        if (isWriteGoodLanguage(event.document.languageId)) {
+            doLint(event.document);
+        }
     }));
 
     context.subscriptions.push(workspace.onDidOpenTextDocument(event => {
-        doLint(event);
+        if (isWriteGoodLanguage(event.languageId) {
+            doLint(event);
+        }
     }));
+}
+
+export function deactivate() {
+    console.log("Write-Good Linter deactivating...")
 }
 
 interface Suggestion {
