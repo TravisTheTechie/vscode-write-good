@@ -21,8 +21,7 @@
       "properties": {
         "write-good.languages": {
           "default": [
-            "markdown",
-            "plaintext"
+            "markdown"
           ],
           "type": [
             "string",
@@ -31,7 +30,7 @@
           "items": {
             "type": "string"
           },
-          "description": "Languages to lint with the write-good linter",
+          "description": "Languages to lint with the write-good linter. '*' to enable on all languages.",
           "scope": "resource"
         }
       }
