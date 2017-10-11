@@ -36,6 +36,5 @@ function doLint(document: TextDocument) {
         });
     });
 
-    diagnosticCollection.clear();
     diagnosticCollection.set(document.uri, diagnostics);
 }
