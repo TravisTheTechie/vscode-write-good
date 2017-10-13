@@ -2,10 +2,10 @@
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
   "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "travisthetechie",
   "engines": {
-    "vscode": "^0.10.6"
+    "vscode": "^1.1.0"
   },
   "categories": [
     "Linters"
@@ -15,7 +15,7 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "configuration":{
+    "configuration": {
       "type": "object",
       "title": "write-good",
       "properties": {
@@ -42,14 +42,14 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "typescript": "^1.7.5",
-    "vscode": "^0.11.0"
+    "typescript": "^2.0.0",
+    "vscode": "^1.1.0"
   },
   "dependencies": {
-    "write-good": "^0.9.1"
+    "write-good": "^0.11.3"
   },
   "license": "MIT",
   "repository": {
-      "url": "https://github.com/TravisTheTechie/vscode-write-good"
+    "url": "https://github.com/TravisTheTechie/vscode-write-good"
   }
 }
