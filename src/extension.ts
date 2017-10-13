@@ -2,7 +2,7 @@
 
 import { workspace, Disposable, ExtensionContext, TextDocument, languages,
          Diagnostic, DiagnosticSeverity, Range, Position } from 'vscode';
-let WriteGood = require('write-good');
+import WriteGood from 'write-good';
 
 export function activate(context: ExtensionContext) {
 
