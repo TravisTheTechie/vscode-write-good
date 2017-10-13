@@ -6,6 +6,10 @@ Provides a [write-good](https://github.com/btford/write-good) linter extension f
 
 Press F1 or CTRL+P and type out `> ext install write good linter`. 
 
+## Settings
+
+`write-good.languages` defaults to `["markdown"]`, but it can be overridden to something like `["markdown", "text"]` if you would like linting to apply to other filetypes.
+
 ## License and acknowledgements
 
 This is licensed under the MIT open source license. Do what you want with this software, just include notice that it orginated with me.
@@ -26,3 +30,7 @@ Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/
 1. Visit https://travisthetechie.visualstudio.com/_details/security/tokens for a token (all accounts, all scopes)
 1. `vsce login travisthetechie`
 1. `vsce publish <version>`
+
+## Thank you to contributors
+
+Thank you to [James Ruskin](https://github.com/JPRuskin) for enabling settings. [PR4](https://github.com/TravisTheTechie/vscode-write-good/pull/4)
