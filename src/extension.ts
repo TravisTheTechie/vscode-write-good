@@ -1,12 +1,17 @@
 'use strict';
 
-import { workspace, Disposable, ExtensionContext, TextDocument, languages,
-         Diagnostic, DiagnosticSeverity, Range, Position } from 'vscode';
+import { workspace, ExtensionContext, TextDocument, languages, Uri,
+         Diagnostic, DiagnosticSeverity, Range, Position, DiagnosticCollection } from 'vscode';
 import * as WriteGood from 'write-good';
+
+let diagnosticCollection: DiagnosticCollection;
+let diagnosticMap: Map<string, Diagnostic[]>;
 
 export function activate(context: ExtensionContext) {
 
     console.log("Write-Good Linter active...");
+    diagnosticCollection = languages.createDiagnosticCollection("Write-Good Lints");
+    diagnosticMap = new Map();
 
     function isWriteGoodLanguage(languageId) {
         let wgLanguages: string = workspace.getConfiguration('write-good').get('languages');
@@ -24,6 +29,13 @@ export function activate(context: ExtensionContext) {
             doLint(event);
         }
     }));
+
+    context.subscriptions.push(workspace.onDidCloseTextDocument(event => {
+        if (diagnosticMap.has(event.uri.toString())) {
+            diagnosticMap.delete(event.uri.toString());
+        }
+        resetDiagnostics();
+    }));
 }
 
 export function deactivate() {
@@ -36,9 +48,16 @@ interface Suggestion {
     reason: string
 }
 
+function resetDiagnostics() {
+    diagnosticCollection.clear();
+
+    diagnosticMap.forEach((diags, file) => {
+        diagnosticCollection.set(Uri.parse(file), diags);
+    });
+}
+
 function doLint(document: TextDocument) {
-    let diagnosticCollection = languages.createDiagnosticCollection("Write-Good Lints");
-    let diagnostics : Diagnostic[] = [];
+    let diagnostics: Diagnostic[] = [];
     let lines = document.getText().split(/\r?\n/g);
     lines.forEach((line, lineCount) => {
         let suggestions : Suggestion[] = WriteGood(line);
@@ -49,6 +68,6 @@ function doLint(document: TextDocument) {
         });
     });
 
-    diagnosticCollection.clear();
-    diagnosticCollection.set(document.uri, diagnostics);
+    diagnosticMap.set(document.uri.toString(), diagnostics);
+    resetDiagnostics();
 }
