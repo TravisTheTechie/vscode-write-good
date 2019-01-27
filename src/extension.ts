@@ -3,6 +3,7 @@
 import { workspace, ExtensionContext, TextDocument, languages, Uri,
          Diagnostic, DiagnosticSeverity, Range, Position, DiagnosticCollection } from 'vscode';
 import * as WriteGood from 'write-good';
+import { isNullOrUndefined } from 'util';
 
 let diagnosticCollection: DiagnosticCollection;
 let diagnosticMap: Map<string, Diagnostic[]>;
@@ -57,10 +58,14 @@ function resetDiagnostics() {
 }
 
 function doLint(document: TextDocument) {
+    var wgConfig: object = workspace.getConfiguration('write-good').get('write-good-config');
+    if (isNullOrUndefined(wgConfig)) {
+        wgConfig = {};
+    }
     let diagnostics: Diagnostic[] = [];
     let lines = document.getText().split(/\r?\n/g);
     lines.forEach((line, lineCount) => {
-        let suggestions : Suggestion[] = WriteGood(line);
+        let suggestions : Suggestion[] = WriteGood(line, wgConfig);
         suggestions.forEach((suggestion, si) => {
             let start = new Position(lineCount, suggestion.index);
             let end = new Position(lineCount, suggestion.index + suggestion.offset);

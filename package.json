@@ -2,7 +2,7 @@
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
   "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "publisher": "travisthetechie",
   "engines": {
     "vscode": "^1.26.0"
@@ -19,6 +19,15 @@
       "type": "object",
       "title": "write-good",
       "properties": {
+        "write-good.write-good-config": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "default": null,
+          "markdownDescription": "Configuration passed to [write-good](https://www.npmjs.com/package/write-good). Example to enable eprime check is `\"write-good.write-good-config\": { \"eprime\": true }`.",
+          "scope": "resource"
+        },
         "write-good.languages": {
           "default": [
             "markdown",
