@@ -21,7 +21,8 @@
       "properties": {
         "write-good.languages": {
           "default": [
-            "markdown"
+            "markdown",
+            "plaintext"
           ],
           "type": [
             "string",
