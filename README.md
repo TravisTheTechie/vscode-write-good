@@ -4,7 +4,7 @@ Provides a [write-good](https://github.com/btford/write-good) linter extension f
 
 ## Installation
 
-Press F1 or CTRL+P and type out `> ext install write good linter`. Check out the latest published version on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter).
+Press F1 or CTRL+P (or CMD+P) and type out `> ext install travisthetechie.write-good-linter`. Check out the latest published version on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter).
 
 ## Settings
 
