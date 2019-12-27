@@ -58,7 +58,7 @@ function resetDiagnostics() {
 }
 
 function doLint(document: TextDocument) {
-    var wgConfig: object = workspace.getConfiguration('write-good').get('write-good-config');
+    var wgConfig: object = workspace.getConfiguration('write-good').get('write-good.write-good-config');
     if (isNullOrUndefined(wgConfig)) {
         wgConfig = {};
     }
