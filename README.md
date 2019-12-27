@@ -31,7 +31,7 @@ Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/
 1. `npm install -g vsce`
 1. Visit https://travisthetechie.visualstudio.com/_details/security/tokens for a token (all accounts, all scopes)
 1. `vsce login travisthetechie`
-1. `vsce publish <version>`
+1. `vsce publish`
 
 ## Thank you to contributors
 
