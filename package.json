@@ -2,7 +2,7 @@
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
   "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "travisthetechie",
   "engines": {
     "vscode": "^1.26.0"
@@ -19,6 +19,15 @@
       "type": "object",
       "title": "write-good",
       "properties": {
+        "write-good.only-lint-on-save": {
+          "type": [ 
+            "null", 
+            "boolean" 
+          ],
+          "default": false,
+          "markdownDescription": "Disables linting during editing for large files. A save triggers linting.",
+          "scope": "resource"
+        },
         "write-good.write-good-config": {
           "type": [
             "object",
@@ -48,7 +57,7 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
+    "compile": "tsc -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {

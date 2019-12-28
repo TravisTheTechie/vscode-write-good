@@ -12,6 +12,8 @@ Press F1 or CTRL+P (or CMD+P) and type out `> ext install travisthetechie.write-
 
 `write-good.write-good-config` is a direct pass through to the underlying [write-good](https://github.com/btford/write-good) engine. To enable eprime check and disable check for so at the start of sentance, add `"write-good.write-good-config": { "eprime": true, "so": false }` to your settings.
 
+`write-good.only-lint-on-save` disables linting during editing for large files. A save triggers linting. 
+
 ## License and acknowledgements
 
 This is licensed under the MIT open source license. Do what you want with this software, just include notice that it orginated with me.
