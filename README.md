@@ -8,7 +8,7 @@ Press F1 or CTRL+P (or CMD+P) and type out `> ext install travisthetechie.write-
 
 ## Settings
 
-`write-good.languages` defaults to `["markdown"]`, but it can be overridden to something like `["markdown", "plaintext"]` if you would like linting to apply to other filetypes.
+`write-good.languages` defaults to `["markdown", "plaintext"]`, but it can be overridden to something like `["markdown"]` if you would like linting to apply to other filetypes.
 
 `write-good.write-good-config` is a direct pass through to the underlying [write-good](https://github.com/btford/write-good) engine. To enable eprime check and disable check for so at the start of sentance, add `"write-good.write-good-config": { "eprime": true, "so": false }` to your settings.
 
