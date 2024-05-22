@@ -14,6 +14,8 @@ Press F1 or CTRL+P (or CMD+P) and type out `> ext install travisthetechie.write-
 
 `write-good.only-lint-on-save` disables linting during editing for large files. A save triggers linting. 
 
+`write-good.debounce-time-in-ms` is the minimum time, in milliseconds, that must wait between linting attempts. Saving ignores the minimum time. Default is 200ms. This is useful if linting causes any performance hit and you want to limit it. 
+
 ## License and acknowledgements
 
 This is licensed under the MIT open source license. Do what you want with this software, just include notice that it orginated with me.

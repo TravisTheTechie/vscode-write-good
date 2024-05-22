@@ -2,16 +2,16 @@
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
   "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "travisthetechie",
   "engines": {
-    "vscode": "^1.26.0"
+    "vscode": "^1.89.0"
   },
   "categories": [
     "Linters"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -19,6 +19,15 @@
       "type": "object",
       "title": "write-good",
       "properties": {
+        "write-good.debounce-time-in-ms": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "default": 200,
+          "markdownDescription": "Minimum milliseconds between linting attempts. Default is 200ms, increasing this can reduce load when working with large files. Linting on save and load are not rate limited.",
+          "scope": "resouce"
+        },
         "write-good.only-lint-on-save": {
           "type": [ 
             "null", 
@@ -56,19 +65,21 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install"
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^10.12.18",
-    "mocha": "^6.2.2",
-    "typescript": "^3.7.4",
-    "vscode": "^1.1.36"
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"eslint": "^8.56.0",
+    "@types/node": "^20.12.12",
+    "@types/vscode": "1.89.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "write-good": "^1.0.2"
+    "write-good": "^1.0.8"
   },
   "license": "MIT",
   "repository": {
