@@ -2,5 +2,4 @@ out
 node_modules
 write-good-linter-*.vsix
 .DS_Store
-package-lock.json
 test.md
