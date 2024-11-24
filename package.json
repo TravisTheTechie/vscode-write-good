@@ -2,10 +2,10 @@
   "name": "write-good-linter",
   "displayName": "Write Good Linter",
   "description": "Applies the Write Good Linter to your Markdown, so you can write more good.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "travisthetechie",
   "engines": {
-    "vscode": "^1.89.0"
+    "vscode": "^1.95.0"
   },
   "categories": [
     "Linters"
@@ -29,9 +29,9 @@
           "scope": "resource"
         },
         "write-good.only-lint-on-save": {
-          "type": [ 
-            "null", 
-            "boolean" 
+          "type": [
+            "null",
+            "boolean"
           ],
           "default": false,
           "markdownDescription": "Disables linting during editing for large files. A save triggers linting.",
@@ -65,20 +65,24 @@
     }
   },
   "scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"lint": "eslint \"src/**/*.ts\"",
-		"watch": "tsc -watch -p ./"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^6.7.0",
-		"@typescript-eslint/parser": "^6.7.0",
-		"eslint": "^8.56.0",
-    "@types/node": "^20.12.12",
-    "@types/vscode": "1.89.0",
-    "typescript": "^5.4.5"
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.9.3",
+    "@types/vscode": "1.95.0",
+    "@types/write-good": "1.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^9.15.0",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@types/write-good": "^1.0.3",
     "write-good": "^1.0.8"
   },
   "license": "MIT",

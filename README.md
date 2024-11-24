@@ -40,3 +40,5 @@ Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/
 ## Thank you to contributors
 
 Thank you to [James Ruskin](https://github.com/JPRuskin) for enabling settings. [PR4](https://github.com/TravisTheTechie/vscode-write-good/pull/4)
+
+Thank you to [Freed-Wu](https://github.com/Freed-Wu) for typo fixes in configuration. [PR22](https://github.com/TravisTheTechie/vscode-write-good/pull/22)

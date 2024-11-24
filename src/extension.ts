@@ -1,5 +1,3 @@
-'use strict';
-
 import { workspace, ExtensionContext, TextDocument, languages, Uri,
          Diagnostic, DiagnosticCollection } from 'vscode';
 import { lintText } from './linter';
