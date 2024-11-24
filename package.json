@@ -26,7 +26,7 @@
           ],
           "default": 200,
           "markdownDescription": "Minimum milliseconds between linting attempts. Default is 200ms, increasing this can reduce load when working with large files. Linting on save and load are not rate limited.",
-          "scope": "resouce"
+          "scope": "resource"
         },
         "write-good.only-lint-on-save": {
           "type": [ 
