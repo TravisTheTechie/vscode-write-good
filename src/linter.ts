@@ -1,5 +1,5 @@
 import { Diagnostic, DiagnosticSeverity, Range, Position } from 'vscode';
-import * as WriteGood from 'write-good';
+import { default as WriteGood } from 'write-good';
 
 interface Suggestion {
     index: number,
