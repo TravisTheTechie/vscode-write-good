@@ -1,8 +1,24 @@
 # Write Good Linter for Visual Studio Code
 
-Provides a [write-good](https://github.com/btford/write-good) linter extension for [Visual Studio Code](https://code.visualstudio.com/).
+Provides a [write-good](https://github.com/btford/write-good) linter extension for [Visual Studio Code](https://code.visualstudio.com/)
+and (Neo)Vim.
 
 ## Installation
+
+### (Neo)Vim
+
+- [coc-marketplace](https://github.com/fannheyward/coc-marketplace)
+- [npm](https://www.npmjs.com/package/write-good-linter)
+- vim:
+
+```vim
+" command line
+CocInstall write-good-linter
+" or add the following code to your vimrc
+let g:coc_global_extensions = ['write-good-linter', 'other coc-plugins']
+```
+
+### VS Code
 
 Press F1 or CTRL+P (or CMD+P) and type out `> ext install travisthetechie.write-good-linter`. Check out the latest published version on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter).
 

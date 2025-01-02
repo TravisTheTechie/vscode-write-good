@@ -5,15 +5,19 @@
   "version": "0.1.6",
   "publisher": "travisthetechie",
   "engines": {
+    "coc": "^0.0.82",
     "vscode": "^1.95.0"
   },
+  "keywords": [
+    "coc.nvim"
+  ],
   "categories": [
     "Linters"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "*"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/src/extension.js",
   "contributes": {
     "configuration": {
       "type": "object",
@@ -75,6 +79,7 @@
     "@eslint/js": "^9.15.0",
     "@types/node": "^22.9.3",
     "@types/vscode": "1.95.0",
+    "coc.nvim": "^0.0.83-next.18",
     "@types/write-good": "1.0.3",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.15.0",

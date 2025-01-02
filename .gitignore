@@ -1,3 +1,4 @@
+*.tgz
 out
 node_modules
 write-good-linter-*.vsix

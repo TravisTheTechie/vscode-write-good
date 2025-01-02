@@ -1,5 +1,30 @@
-import { workspace, ExtensionContext, TextDocument, languages, Uri,
-         Diagnostic, DiagnosticCollection } from 'vscode';
+import type {
+    ExtensionContext as ExtensionContext_vscode,
+    TextDocument as TextDocument_vscode,
+    Diagnostic as Diagnostic_vscode,
+    DiagnosticCollection as DiagnosticCollection_vscode,
+} from 'vscode';
+import type {
+    ExtensionContext as ExtensionContext_coc,
+    TextDocument as TextDocument_coc,
+    Diagnostic as Diagnostic_coc,
+    DiagnosticCollection as DiagnosticCollection_coc,
+} from 'coc.nvim';
+type ExtensionContext = ExtensionContext_vscode | ExtensionContext_coc;
+type TextDocument = TextDocument_vscode | TextDocument_coc;
+type Diagnostic = Diagnostic_vscode | Diagnostic_coc;
+type DiagnosticCollection = DiagnosticCollection_vscode | DiagnosticCollection_coc;
+let vscode;
+try {
+    vscode = require('vscode');  // eslint-disable-line
+} catch (error) {
+    vscode = require('coc.nvim');  // eslint-disable-line
+}
+const workspace = vscode.workspace;
+const languages = vscode.languages;
+const Uri = vscode.Uri;
+
+
 import { lintText } from './linter';
 
 let diagnosticCollection: DiagnosticCollection;
@@ -27,10 +52,25 @@ export function activate(context: ExtensionContext) {
         }
     }));
 
+    function didOpenTextDocument(document: TextDocument) {
+        if (isWriteGoodLanguage(document.languageId)) {
+            doLint(document);
+        }
+    }
+
+    context.subscriptions.push(workspace.onDidOpenTextDocument(didOpenTextDocument));
+    workspace.documents.map((doc) => {
+        didOpenTextDocument(doc.textDocument);
+    });
+
     // attempt to only lint changes on motification
     context.subscriptions.push(workspace.onDidChangeTextDocument(event => {
-        if (!isWriteGoodLanguage(event.document.languageId)) {
-            // language is unsupported. 
+        try {
+            if (!isWriteGoodLanguage(event.document.languageId)) {
+                // language is unsupported. 
+                return;
+            }
+        } catch (error) {
             return;
         }
 
@@ -75,7 +115,13 @@ function resetDiagnostics() {
     diagnosticCollection.clear();
 
     diagnosticMap.forEach((diags, file) => {
-        diagnosticCollection.set(Uri.parse(file), diags);
+        try {
+            // @ts-expect-error: for vscode
+            diagnosticCollection.set(Uri.parse(file), diags);
+        } catch (e) {
+            // @ts-expect-error: for coc.nvim
+            diagnosticCollection.set(Uri.parse(file).path, diags);
+        }
     });
 }
 
