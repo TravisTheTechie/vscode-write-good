@@ -81,7 +81,7 @@
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@vscode/test-electron": "^2.4.0",
-    "@types/vscode": "1.103.0",
+    "@types/vscode": "1.95.0",
     "@types/write-good": "1.0.3",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
     "@typescript-eslint/parser": "^8.40.0",

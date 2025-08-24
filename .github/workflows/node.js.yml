@@ -38,6 +38,6 @@ jobs:
           npm run test:ci
         fi
     - name: Verify VSIX file list
-      run: npx --yes vsce ls
+      run: npx --yes @vscode/vsce ls
     - name: Package extension (verification only)
-      run: npx --yes vsce package --out write-good-linter.vsix
+      run: npx --yes @vscode/vsce package --out write-good-linter.vsix
