@@ -3,3 +3,4 @@ node_modules
 write-good-linter-*.vsix
 .DS_Store
 test.md
+.vscode-test

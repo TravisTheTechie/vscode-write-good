@@ -46,7 +46,6 @@ export function activate(context: ExtensionContext) {
         const nowMs = (new Date()).getTime();
         if (lastLintMs + debounceMs < nowMs) {
             // debounce time is less than now, let's do this
-            console.log("LINTING!!!!");
             doLint(event.document);
         }
     }));

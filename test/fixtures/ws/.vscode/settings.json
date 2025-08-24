@@ -1,0 +1,5 @@
+{
+  "write-good.debounce-time-in-ms": 0,
+  "write-good.languages": "*",
+  "write-good.only-lint-on-save": false
+}
