@@ -29,3 +29,15 @@ jobs:
     - run: npm ci
     - run: npm run compile
     - run: npm run lint
+    - name: Run tests (headless)
+      shell: bash
+      run: |
+        if [ "$RUNNER_OS" = "Linux" ]; then
+          xvfb-run -a npm run test:ci
+        else
+          npm run test:ci
+        fi
+    - name: Verify VSIX file list
+      run: npx --yes @vscode/vsce ls
+    - name: Package extension (verification only)
+      run: npx --yes @vscode/vsce package --out write-good-linter.vsix

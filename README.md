@@ -30,6 +30,16 @@ Open up the project in Visual Studio Code and hit F5 to open up a *developement 
 
 Check out the [Extending Visual Studio Code](https://code.visualstudio.com/Docs/extensions/overview) documentation for more information.
 
+## Testing
+
+- Install and run: `npm ci` then `npm test`. The first run downloads a VS Code build for testing.
+- GUI vs headless:
+  - Local GUI: `npm run test:gui` opens an Extension Development Host for visual debugging.
+  - Headless CI: `npm run test:ci` forces headless mode (used in GitHub Actions).
+- Layout: tests live in `test/suite/*.test.ts`; fixtures in `test/fixtures/ws`. The runner is `test/runTest.ts` (uses `@vscode/test-electron`).
+- Covered scenarios: diagnostics on bad Markdown, language filtering, only‑lint‑on‑save, and debounce behavior.
+- Tips: if timing is flaky locally, re‑run `npm test` or use GUI mode to observe behavior. Tests should not modify `out/`.
+
 ## Publishing
 
 1. `npm install -g vsce`
